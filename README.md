@@ -63,3 +63,37 @@ classDiagram
     Usuario <|-- Tecnico : Herança
     OrdemServico o-- Cliente : Contém
     OrdemServico o-- Tecnico : Contém
+
+# DOCUMENTAÇÃO DE UI/UX E COMPONENTES (SPRINT 3)
+
+## 1. ARQUITETURA DA INFORMAÇÃO E DASHBOARD
+- **Painel Superior:** Exibe totalizadores consumidos do GerenciadorOS (Singleton), apresentando contagens em tempo real.
+- **Formulário Lateral:** Cadastra novos clientes e chamados acionando a UsuarioFactory de forma desacoplada.
+- **Tabela Central:** Lista dinâmica e responsiva de Ordens de Serviço estilizada com CSS Grid e Flexbox.
+
+## 2. COMPONENTES UI
+- **StatusBadge:** Amarelo (ABERTA), Azul (EM ANDAMENTO) e Verde (CONCLUÍDA).
+- **UserCard:** Exibe as iniciais do cliente em avatar e os dados de contacto.
+- **MetricsCard:** Painéis com totais consolidados.
+
+## 3. CHECKLIST DE ACESSIBILIDADE (WCAG)
+- [x] Contraste mínimo de 4.5:1 nas tabelas e badges.
+- [x] Navegação por TAB em todos os campos de formulário e botões de ação.
+- [x] Rótulos ARIA (aria-label e aria-labelledby) para leitura de ecrã e alteração de status.
+
+# DOCUMENTAÇÃO DE UI/UX E COMPONENTES (SPRINT 3)
+
+## 1. ARQUITETURA DA INFORMAÇÃO E DASHBOARD
+- **Painel Superior:** Exibe totalizadores consumidos do GerenciadorOS (Singleton), apresentando contagens em tempo real.
+- **Formulário Lateral:** Cadastra novos clientes e chamados acionando a UsuarioFactory de forma desacoplada.
+- **Tabela Central:** Lista dinâmica e responsiva de Ordens de Serviço estilizada com CSS Grid e Flexbox.
+
+## 2. COMPONENTES UI
+- **StatusBadge:** Amarelo (ABERTA), Azul (EM ANDAMENTO) e Verde (CONCLUÍDA).
+- **UserCard:** Exibe as iniciais do cliente em avatar e os dados de contacto.
+- **MetricsCard:** Painéis com totais consolidados.
+
+## 3. CHECKLIST DE ACESSIBILIDADE (WCAG)
+- [x] Contraste mínimo de 4.5:1 nas tabelas e badges.
+- [x] Navegação por TAB em todos os campos de formulário e botões de ação.
+- [x] Rótulos ARIA (aria-label e aria-labelledby) para leitura de ecrã e alteração de status.
