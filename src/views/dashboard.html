@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechOS Core - Dashboard</title>
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>TechOS Core <span style="font-size: 1rem; color: var(--text-muted); font-weight: normal;">| Painel de Ordens de Serviço</span></h1>
+    </header>
+
+    <section class="metrics-grid" aria-label="Painel de Métricas">
+        <div class="metric-card">
+            <h3>OS Abertas</h3>
+            <div id="metric-abertas" class="metric-value">0</div>
+        </div>
+        <div class="metric-card">
+            <h3>Em Andamento</h3>
+            <div id="metric-andamento" class="metric-value">0</div>
+        </div>
+        <div class="metric-card">
+            <h3>Concluídas</h3>
+            <div id="metric-concluidas" class="metric-value">0</div>
+        </div>
+    </section>
+
+    <main class="main-layout">
+        <aside class="panel-card" aria-labelledby="form-title">
+            <h2 id="form-title" style="margin-bottom: 1rem; font-size: 1.15rem;">Nova Ordem de Serviço</h2>
+            <form id="form-abertura-os">
+                <div class="form-group">
+                    <label for="cliente-nome">Nome do Cliente</label>
+                    <input type="text" id="cliente-nome" class="form-control" placeholder="Ex: Carlos Silva" required>
+                </div>
+                <div class="form-group">
+                    <label for="cliente-email">E-mail</label>
+                    <input type="email" id="cliente-email" class="form-control" placeholder="carlos@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="cliente-telefone">Telefone</label>
+                    <input type="text" id="cliente-telefone" class="form-control" placeholder="(81) 99999-0000" required>
+                </div>
+                <div class="form-group">
+                    <label for="os-descricao">Descrição do Defeito</label>
+                    <textarea id="os-descricao" class="form-control" rows="3" placeholder="Descreva o problema do equipamento" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" aria-label="Cadastrar nova Ordem de Serviço">Cadastrar OS</button>
+            </form>
+        </aside>
+
+        <section class="panel-card" aria-label="Listagem de Ordens de Serviço">
+            <h2 style="margin-bottom: 1rem; font-size: 1.15rem;">Ordens de Serviço em Aberto</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Descrição</th>
+                            <th>Status</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela-os">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="module">
+        import { OrdemServicoController } from '../controllers/OrdemServicoController.js';
+        const controller = new OrdemServicoController();
+        window.controller = controller;
+        controller.init();
+    </script>
+</body>
+</html>
